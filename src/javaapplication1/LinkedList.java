@@ -6,22 +6,22 @@ package javaapplication1;
  */
 public class LinkedList {
 
-    private Node head;
+    private LinkedListNode head;
     private int listCount;
 
     public LinkedList() {
 
         // this is an empty list, so the reference to the head node
         // is set to a new node with no data
-        this.head = new Node(null);
+        this.head = new LinkedListNode(null);
         this.listCount = 0;
     }
 
     // post: appends the specified element to the end of this list.
     public void append(Object _data) {
 
-        Node temp = new Node(_data);
-        Node current = head;
+        LinkedListNode temp = new LinkedListNode(_data);
+        LinkedListNode current = head;
         while (current.getNext() != null) {
             current = current.getNext();
         }
@@ -31,8 +31,8 @@ public class LinkedList {
     }
 
     public void insetIn(int position, Object data) {
-        Node current = head;
-        Node temp = new Node(data);
+        LinkedListNode current = head;
+        LinkedListNode temp = new LinkedListNode(data);
         // crawl to the requested index or the last element in the list,
         // whichever comes first
         for (int i = 1; i < position && current.getNext() != null; i++) {
@@ -50,7 +50,7 @@ public class LinkedList {
         if (position <= 0) {
             return null;
         }
-        Node current = head;
+        LinkedListNode current = head;
         for (int i = 1; i < position && current.getNext() != null; i++) {
             if (current.getNext() == null) {
                 return null;
@@ -68,7 +68,7 @@ public class LinkedList {
             return false;
         }
 
-        Node current = head;
+        LinkedListNode current = head;
         for (int i = 1; i < position; i++) { //3
             if (current.getNext() != null) {
                 return false;

@@ -2,38 +2,34 @@ package javaapplication1;
 
 public class Node {
 
-    // reference to the next node in the chain,
-    // or null if there isn't one.
-    Node next;
-    // data carried by this node.
-    // could be of any type you need.
-    Object data;
+    int key;
+    String name;
 
-    public Node(Object _data) {
-        this.next = null;
-        this.data = _data;
+    Node leftChild;
+    Node rightChild;
+
+    Node() {
+ 
+
     }
 
-    // another Node constructor if we want to
-    // specify the node to point to.
-    public Node(Object _data, Node _next) {
-        this.next = _next;
-        this.data = _data;
+    Node(int key, String name) {
+
+        this.key = key;
+        this.name = name;
+
     }
 
-    public Object getData() {
-        return data;
-    }
+    public String toString() {
 
-    public void setData(Object _data) {
-        data = _data;
-    }
+        return name + " has the key " + key;
 
-    public Node getNext() {
-        return next;
+        /*
+		 * return name + " has the key " + key + "\nLeft Child: " + leftChild +
+		 * "\nRight Child: " + rightChild + "\n";
+         */
     }
-
-    public void setNext(Node _next) {
-        next = _next;
-    }
+//It really makes it easier to output debugging traces, or makes better logging messages,
+//                since you can use the object's string representation provided by toString() directly;
+//                you don't have to manually build a string that gives the information needed on the object.
 }
